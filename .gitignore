@@ -1,0 +1,13 @@
+# Maven files
+target/
+
+# Compiled sources
+*.class
+
+# VIM generated files
+*.swp
+
+# Eclipse files
+.project
+.classpath
+.settings
