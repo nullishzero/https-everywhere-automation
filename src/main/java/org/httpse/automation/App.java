@@ -20,6 +20,5 @@ package org.httpse.automation;
 // Place holder class
 public class App {
     public static void main(String[] args) {
-        // empty
     }
 }
