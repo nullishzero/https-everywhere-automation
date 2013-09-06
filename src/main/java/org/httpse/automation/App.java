@@ -17,8 +17,42 @@
 
 package org.httpse.automation;
 
+import org.apache.commons.cli.BasicParser;
+import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.CommandLineParser;
+import org.apache.commons.cli.Options;
+import org.apache.commons.cli.ParseException;
+
 // Place holder class
 public class App {
+    private final Options options;
+    private final CommandLine cmd;
+
+    private void addOptions() {
+        // TODO: Print help, finish etc.
+        // TODO: Move to optionbuilder
+        options.addOption("help", false, "still in the works..");
+    }
+
+    private CommandLine parseOptions(final String[] args) {
+        try {
+            CommandLineParser parser = new BasicParser();
+            return parser.parse(options, args);
+        } catch (Exception e) {
+            // TODO: Properly handle
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    // disallow external instances
+    private App(final String[] args) {
+        this.options = new Options();
+        addOptions();
+        this.cmd = parseOptions(args);
+    }
+    
     public static void main(String[] args) {
+        App app = new App(args);
     }
 }
